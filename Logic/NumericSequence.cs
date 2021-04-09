@@ -15,10 +15,13 @@ namespace _7.NumericalSequence.Logic
         }
 
         private readonly int _number;
-        private int _currentNumber = 1;
+
+        public int Number => _number;
 
         public IEnumerable<int> GetSeqence()
         {
+            int _currentNumber = 1;
+
             while (_currentNumber * _currentNumber < _number)
             {
                 yield return _currentNumber;

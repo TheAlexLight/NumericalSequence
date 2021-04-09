@@ -1,4 +1,5 @@
-﻿using _7.NumericalSequence.Logic;
+﻿using _7.NumericalSequence.Controller;
+using _7.NumericalSequence.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,23 @@ namespace _7.NumericalSequence
     {
         static void Main(string[] args)
         {
-            NumericSequence sequence = new NumericSequence(10);
-
-            var fullNumericalSequence = sequence.GetSeqence();
-
-            foreach (var number in fullNumericalSequence)
+            try
             {
-                Console.WriteLine(number);
+                if (args.Length != 1)
+                {
+                    throw new ArgumentException();
+                }
+
+                NumericSequenceController controller = new NumericSequenceController();
+
+                controller.StartExecution(args[0]);
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }
