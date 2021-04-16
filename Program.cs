@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using _7.NumericalSequence.Controllers;
 using _7.NumericalSequence.Interfaces.Factory;
 using _7.NumericalSequence.Logic;
+using _7.NumericalSequence.Logic.Abstract;
 using _7.NumericalSequence.Logic.Builders;
 using TasksLibrary;
 
@@ -25,9 +26,9 @@ namespace _7.NumericalSequence
                     throw new ArgumentException();
                 }
 
-                NumericSequenceController controller = new NumericSequenceController();
+                Controller SequenceController = new NumericSequenceController(tasksLibFactory);
 
-                controller.StartExecution(args[0]);
+                SequenceController.Initialize(args[0]);
             }
             catch (Exception)
             {
