@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _7.NumericalSequence.Logic
 {
-    class NumericSequence : ISequence
+    internal class NumericSequence : ISequence
     {
         public NumericSequence(int number)
         {

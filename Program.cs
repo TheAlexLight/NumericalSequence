@@ -1,10 +1,14 @@
-﻿using _7.NumericalSequence.Controllers;
-using _7.NumericalSequence.Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using _7.NumericalSequence.Controllers;
+using _7.NumericalSequence.Interfaces.Factory;
+using _7.NumericalSequence.Logic;
+using _7.NumericalSequence.Logic.Builders;
+using TasksLibrary;
 
 namespace _7.NumericalSequence
 {
@@ -12,6 +16,8 @@ namespace _7.NumericalSequence
     {
         static void Main(string[] args)
         {
+            ITasksLibFactory tasksLibFactory = new ConsoleTasksLibBuilder();
+
             try
             {
                 if (args.Length != 1)
@@ -25,7 +31,8 @@ namespace _7.NumericalSequence
             }
             catch (Exception)
             {
-                throw;
+                IOutsidePrinter printer = tasksLibFactory.CreatePrinter();
+                printer.ShowInstruction();
             }
 
         }
