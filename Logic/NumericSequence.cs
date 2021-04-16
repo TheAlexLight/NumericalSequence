@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _7.NumericalSequence.Interfaces;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _7.NumericalSequence.Logic
 {
-    class NumericSequence
+    class NumericSequence : ISequence
     {
         public NumericSequence(int number)
         {
@@ -20,13 +21,9 @@ namespace _7.NumericalSequence.Logic
 
         public IEnumerable<int> GetSeqence()
         {
-            int _currentNumber = 1;
-
-            while (_currentNumber * _currentNumber < _number)
+            for (int currentNumber = 0; currentNumber * currentNumber < _number; currentNumber++)
             {
-                yield return _currentNumber;
-
-                _currentNumber++;
+                yield return currentNumber;
             }
 
             yield break;

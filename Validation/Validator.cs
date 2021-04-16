@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _7.NumericalSequence.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ namespace _7.NumericalSequence.Validation
 {
     class Validator
     {
-        public bool CheckIntOnPositive(int intToCheck, int maxValue)
+        public bool CheckIntOnPositive(int intToCheck)
         {
-            return (intToCheck > 1 && intToCheck <= maxValue);
+            return (intToCheck > 1 && intToCheck < Constant.MAX_NUMBER_VALUE);
         }
     }
 }

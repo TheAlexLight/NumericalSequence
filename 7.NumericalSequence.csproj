@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\NumericSequenceController.cs" />
+    <Compile Include="Controllers\NumericSequenceController.cs" />
+    <Compile Include="Interfaces\ISequence.cs" />
+    <Compile Include="Logic\Builders\Abstract\BaseSequence.cs" />
+    <Compile Include="Logic\Builders\NumericSequenceBuilder.cs" />
     <Compile Include="Logic\NumericSequence.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

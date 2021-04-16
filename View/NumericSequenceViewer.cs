@@ -9,20 +9,18 @@ namespace _7.NumericalSequence.View
 {
     class NumericSequenceViewer
     {
-        public NumericSequenceViewer(NumericSequence sequence)
+        public NumericSequenceViewer(IEnumerable<int> receivedSequence)
         {
-            _sequence = sequence;
+            _receivedSequence = receivedSequence;
         }
 
-        readonly NumericSequence _sequence;
+        readonly IEnumerable<int> _receivedSequence;
 
-        public void ShowNumericSequence()
+        public void ShowNumericSequence(int startNumber)
         {
-            IEnumerable<int> _receivedSequence = _sequence.GetSeqence();
-
             int last = _receivedSequence.Last();
 
-            Console.WriteLine(string.Format(Constant.NUMERIC_SEQUENCE_RESULT, _sequence.Number));
+            Console.WriteLine(string.Format(Constant.NUMERIC_SEQUENCE_RESULT, startNumber));
 
             foreach (var number in _receivedSequence)
             {

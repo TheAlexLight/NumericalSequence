@@ -1,4 +1,7 @@
-﻿using _7.NumericalSequence.Logic;
+﻿using _7.NumericalSequence.Interfaces;
+using _7.NumericalSequence.Logic;
+using _7.NumericalSequence.Logic.Builders;
+using _7.NumericalSequence.Logic.Builders.Abstract;
 using _7.NumericalSequence.Validation;
 using _7.NumericalSequence.View;
 using ConsoleTaskLibrary;
@@ -8,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _7.NumericalSequence.Controller
+namespace _7.NumericalSequence.Controllers
 {
     class NumericSequenceController
     {
@@ -27,18 +30,20 @@ namespace _7.NumericalSequence.Controller
                 Environment.Exit(-1);
             }
 
-            if (!_validArgs.CheckIntOnPositive(_convertedNumber, Constant.MAX_NUMBER_VALUE))
+            if (!_validArgs.CheckIntOnPositive(_convertedNumber))
             {
                 _printer.WriteLine(Constant.WRONG_BOUNDARIES);
                 _printer.ShowInstruction(Constant.INSTRUCTION, Constant.FIRST_ARGUMENT);
                 Environment.Exit(-1);
             }
 
-            NumericSequence sequence = new NumericSequence(_convertedNumber);
+            BaseSequence sequenceBuilder = new NumericSequenceBuilder();
 
-            NumericSequenceViewer viewer = new NumericSequenceViewer(sequence);
+            ISequence sequence = sequenceBuilder.CreateSequence(_convertedNumber);
 
-            viewer.ShowNumericSequence();
+            NumericSequenceViewer viewer = new NumericSequenceViewer(sequence.GetSeqence());
+
+            viewer.ShowNumericSequence(_convertedNumber);
 
         }
     }

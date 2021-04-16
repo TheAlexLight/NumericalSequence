@@ -1,4 +1,4 @@
-﻿using _7.NumericalSequence.Controller;
+﻿using _7.NumericalSequence.Controllers;
 using _7.NumericalSequence.Logic;
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,6 @@ namespace _7.NumericalSequence
             }
             catch (Exception)
             {
-
                 throw;
             }
 
