@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using _7.NumericalSequence.Controllers;
-using _7.NumericalSequence.Interfaces.Factory;
-using _7.NumericalSequence.Logic;
 using _7.NumericalSequence.Logic.Abstract;
 using _7.NumericalSequence.Logic.Builders;
 using TasksLibrary;
@@ -17,9 +11,7 @@ namespace _7.NumericalSequence
     {
         static void Main(string[] args)
         {
-            ITasksLibFactory tasksLibFactory = new ConsoleTasksLibBuilder();
-            ISequenceFactory sequenceFactory = new NumericSequenceBuilder();
-            IValidatorFactory validatorFactory = new ValidatorBuilder();
+            FullFactory allFactories = new FullFactory(new ConsoleTasksLibBuilder(), new ValidatorBuilder(), new NumericSequenceBuilder());
 
             try
             {
@@ -28,13 +20,14 @@ namespace _7.NumericalSequence
                     throw new ArgumentException();
                 }
 
-                Controller SequenceController = new NumericSequenceController(tasksLibFactory, sequenceFactory, validatorFactory);
+                Controller SequenceController = new NumericSequenceController(allFactories.TasksLibFactory, allFactories.SequenceFactory,
+                        allFactories.ValidatorFactory);
 
                 SequenceController.Initialize(args[0]);
             }
             catch (Exception)
             {
-                IOutsidePrinter printer = tasksLibFactory.CreatePrinter();
+                IOutsidePrinter printer = allFactories.TasksLibFactory.CreatePrinter();
                 printer.ShowInstruction();
             }
 

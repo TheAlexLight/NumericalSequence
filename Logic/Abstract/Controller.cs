@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using _7.NumericalSequence.Interfaces.Factory;
+﻿using _7.NumericalSequence.Interfaces.Factory;
 
 namespace _7.NumericalSequence.Logic.Abstract
 {

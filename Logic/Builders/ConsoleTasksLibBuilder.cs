@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using TasksLibrary;
+﻿using TasksLibrary;
 using _7.NumericalSequence.Interfaces.Factory;
 using _7.NumericalSequence.Validation;
 using _7.NumericalSequence.View;

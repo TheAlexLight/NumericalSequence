@@ -1,27 +1,22 @@
 ﻿using _7.NumericalSequence.Interfaces.Factory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _7.NumericalSequence.Controllers
 {
     class FullFactory
     {
-        public FullFactory(ISequenceFactory sequenceFactory, IValidatorFactory validatorFactory, ITasksLibFactory tasksLibFactory)
+        public FullFactory(ITasksLibFactory tasksLibFactory, IValidatorFactory validatorFactory, ISequenceFactory sequenceFactory)
         {
-            _sequenceFactory = sequenceFactory;
-            _validatorFactory = validatorFactory;
             _tasksLibFactory = tasksLibFactory;
+            _validatorFactory = validatorFactory;
+            _sequenceFactory = sequenceFactory;
         }
 
-        readonly IOutsidePrinterFactory _printerFactory;
+        readonly ISequenceFactory _sequenceFactory;
         readonly IValidatorFactory _validatorFactory;
-        readonly IParcerFactory _tasksLibFactory;
+        readonly ITasksLibFactory _tasksLibFactory;
 
-        public IOutsidePrinterFactory PrinterFactory => _printerFactory;
+        public ISequenceFactory SequenceFactory => _sequenceFactory;
         public IValidatorFactory ValidatorFactory => _validatorFactory;
-        public IParcerFactory ParcerFactory => _tasksLibFactory;
+        public ITasksLibFactory TasksLibFactory => _tasksLibFactory;
     }
 }

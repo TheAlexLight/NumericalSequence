@@ -1,10 +1,8 @@
-﻿using _7.NumericalSequence.Interfaces;
-using _7.NumericalSequence.Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using _7.NumericalSequence.Interfaces;
 
 namespace _7.NumericalSequence.View
 {

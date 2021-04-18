@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\FullFactory.cs" />
     <Compile Include="Controllers\NumericSequenceController.cs" />
     <Compile Include="Interfaces\Factory\ISequenceFactory.cs" />
     <Compile Include="Interfaces\Factory\ITasksLibFactory.cs" />
