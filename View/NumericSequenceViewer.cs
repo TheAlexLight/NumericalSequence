@@ -1,4 +1,5 @@
-﻿using _7.NumericalSequence.Logic;
+﻿using _7.NumericalSequence.Interfaces;
+using _7.NumericalSequence.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _7.NumericalSequence.View
 {
-    class NumericSequenceViewer
+    class NumericSequenceViewer : ISequenceViewer
     {
         public NumericSequenceViewer(IEnumerable<int> receivedSequence)
         {
@@ -16,7 +17,7 @@ namespace _7.NumericalSequence.View
 
         readonly IEnumerable<int> _receivedSequence;
 
-        public void ShowNumericSequence(int startNumber)
+        public void ShowSequence(int startNumber)
         {
             int last = _receivedSequence.Last();
 

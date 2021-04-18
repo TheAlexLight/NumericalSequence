@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _7.NumericalSequence.Validation
 {
-    class Validator : IValidator
+    internal class Validator : IValidator
     {
         public bool CheckIntOnPositive(int intToCheck)
         {

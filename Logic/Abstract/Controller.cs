@@ -5,20 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 
 using _7.NumericalSequence.Interfaces.Factory;
-using _7.NumericalSequence.Logic.Builders.Abstract;
 
 namespace _7.NumericalSequence.Logic.Abstract
 {
     public abstract class Controller
     {
         readonly protected ITasksLibFactory _taskLibFactory;
-        readonly protected BaseSequence _sequenceBuilder;
+        readonly protected ISequenceFactory _sequenceFactory;
         readonly protected IValidatorFactory _validatorFactory;
 
-        public Controller(ITasksLibFactory tasksLibFactory, BaseSequence sequenceBuilder, IValidatorFactory validatorFactory)
+        public Controller(ITasksLibFactory tasksLibFactory, ISequenceFactory sequenceFactory, IValidatorFactory validatorFactory)
         {
             _taskLibFactory = tasksLibFactory;
-            _sequenceBuilder = sequenceBuilder;
+            _sequenceFactory = sequenceFactory;
             _validatorFactory = validatorFactory;
         }
 

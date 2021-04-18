@@ -9,7 +9,6 @@ using _7.NumericalSequence.Interfaces.Factory;
 using _7.NumericalSequence.Logic;
 using _7.NumericalSequence.Logic.Abstract;
 using _7.NumericalSequence.Logic.Builders;
-using _7.NumericalSequence.Logic.Builders.Abstract;
 using TasksLibrary;
 
 namespace _7.NumericalSequence
@@ -19,7 +18,7 @@ namespace _7.NumericalSequence
         static void Main(string[] args)
         {
             ITasksLibFactory tasksLibFactory = new ConsoleTasksLibBuilder();
-            BaseSequence sequenceBuilder = new NumericSequenceBuilder();
+            ISequenceFactory sequenceFactory = new NumericSequenceBuilder();
             IValidatorFactory validatorFactory = new ValidatorBuilder();
 
             try
@@ -29,7 +28,7 @@ namespace _7.NumericalSequence
                     throw new ArgumentException();
                 }
 
-                Controller SequenceController = new NumericSequenceController(tasksLibFactory, sequenceBuilder, validatorFactory);
+                Controller SequenceController = new NumericSequenceController(tasksLibFactory, sequenceFactory, validatorFactory);
 
                 SequenceController.Initialize(args[0]);
             }

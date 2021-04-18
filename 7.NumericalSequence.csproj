@@ -47,12 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\NumericSequenceController.cs" />
+    <Compile Include="Interfaces\Factory\ISequenceFactory.cs" />
     <Compile Include="Interfaces\Factory\ITasksLibFactory.cs" />
     <Compile Include="Interfaces\Factory\IValidatorFactory.cs" />
     <Compile Include="Interfaces\ISequence.cs" />
+    <Compile Include="Interfaces\ISequenceViewer.cs" />
     <Compile Include="Interfaces\IValidator.cs" />
     <Compile Include="Logic\Abstract\Controller.cs" />
-    <Compile Include="Logic\Builders\Abstract\BaseSequence.cs" />
     <Compile Include="Logic\Builders\NumericSequenceBuilder.cs" />
     <Compile Include="Logic\Builders\ConsoleTasksLibBuilder.cs" />
     <Compile Include="Logic\Builders\ValidatorBuilder.cs" />

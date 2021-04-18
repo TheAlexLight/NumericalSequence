@@ -9,7 +9,6 @@ using _7.NumericalSequence.Interfaces.Factory;
 using _7.NumericalSequence.Logic;
 using _7.NumericalSequence.Logic.Abstract;
 using _7.NumericalSequence.Logic.Builders;
-using _7.NumericalSequence.Logic.Builders.Abstract;
 using _7.NumericalSequence.Validation;
 using _7.NumericalSequence.View;
 using TasksLibrary;
@@ -18,8 +17,8 @@ namespace _7.NumericalSequence.Controllers
 {
     class NumericSequenceController : Controller
     {
-        public NumericSequenceController(ITasksLibFactory tasksLibFactory, BaseSequence sequenceBuilder, IValidatorFactory validatorFactory)
-                : base(tasksLibFactory, sequenceBuilder, validatorFactory)
+        public NumericSequenceController(ITasksLibFactory tasksLibFactory, ISequenceFactory sequenceFactory, IValidatorFactory validatorFactory)
+                : base(tasksLibFactory, sequenceFactory, validatorFactory)
         {
         }
 
@@ -45,11 +44,11 @@ namespace _7.NumericalSequence.Controllers
                 Environment.Exit(-1);
             }
 
-            ISequence sequence = _sequenceBuilder.CreateSequence(convertedNumber);
+            ISequence sequence = _sequenceFactory.CreateSequence(convertedNumber);
 
-            NumericSequenceViewer viewer = new NumericSequenceViewer(sequence.GetSeqence());
+            var viewer = _sequenceFactory.CreateSequenceViewer(sequence.GetSeqence());
 
-            viewer.ShowNumericSequence(convertedNumber);
+            viewer.ShowSequence(convertedNumber);
 
         }
     }
