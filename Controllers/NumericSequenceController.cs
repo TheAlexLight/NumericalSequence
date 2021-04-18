@@ -18,18 +18,16 @@ namespace _7.NumericalSequence.Controllers
 {
     class NumericSequenceController : Controller
     {
-        public NumericSequenceController(ITasksLibFactory tasksLibFactory) : base(tasksLibFactory)
+        public NumericSequenceController(ITasksLibFactory tasksLibFactory, BaseSequence sequenceBuilder, IValidatorFactory validatorFactory)
+                : base(tasksLibFactory, sequenceBuilder, validatorFactory)
         {
         }
-
-        readonly BaseSequence _sequenceBuilder = new NumericSequenceBuilder();
-
-        readonly Validator _validArgs = new Validator();
 
         public override void Initialize(string number)
         {
             IConverter converter = _taskLibFactory.CreateConverter();
             IOutsidePrinter printer = _taskLibFactory.CreatePrinter();
+            IValidator validator = _validatorFactory.CreateValidator();
 
             int convertedNumber = converter.TryParseToInt(number);
 
@@ -40,7 +38,7 @@ namespace _7.NumericalSequence.Controllers
                 Environment.Exit(-1);
             }
 
-            if (!_validArgs.CheckIntOnPositive(convertedNumber))
+            if (!validator.CheckIntOnPositive(convertedNumber))
             {
                 printer.WriteLine(Constant.WRONG_BOUNDARIES);
                 printer.ShowInstruction();
