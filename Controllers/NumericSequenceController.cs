@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 using _7.NumericalSequence.Interfaces;
 using _7.NumericalSequence.Interfaces.Factory;
-using _7.NumericalSequence.Logic;
 using _7.NumericalSequence.Logic.Abstract;
-using _7.NumericalSequence.Logic.Builders;
-using _7.NumericalSequence.Validation;
 using _7.NumericalSequence.View;
 using TasksLibrary;
 
@@ -46,7 +43,7 @@ namespace _7.NumericalSequence.Controllers
 
             ISequence sequence = _sequenceFactory.CreateSequence(convertedNumber);
 
-            var viewer = _sequenceFactory.CreateSequenceViewer(sequence.GetSeqence());
+            var viewer = _sequenceFactory.CreateSequenceViewer(sequence.GetSequence());
 
             viewer.ShowSequence(convertedNumber);
 

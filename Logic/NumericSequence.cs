@@ -19,7 +19,7 @@ namespace _7.NumericalSequence.Logic
 
         public int Number => _number;
 
-        public IEnumerable<int> GetSeqence()
+        public IEnumerable<int> GetSequence()
         {
             for (int currentNumber = 0; currentNumber * currentNumber < _number; currentNumber++)
             {

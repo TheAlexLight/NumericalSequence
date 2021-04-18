@@ -8,6 +8,6 @@ namespace _7.NumericalSequence.Interfaces
 {
     public interface ISequence
     {
-        IEnumerable<int> GetSeqence();
+        IEnumerable<int> GetSequence();
     }
 }
