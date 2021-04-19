@@ -30,7 +30,6 @@ namespace _7.NumericalSequence
                 IOutsidePrinter printer = allFactories.TasksLibFactory.CreatePrinter();
                 printer.ShowInstruction();
             }
-
         }
     }
 }

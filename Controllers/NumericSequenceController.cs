@@ -1,5 +1,5 @@
 ﻿using System;
-
+using _7.NumericalSequence.Enums;
 using _7.NumericalSequence.Interfaces;
 using _7.NumericalSequence.Interfaces.Factory;
 using _7.NumericalSequence.Logic.Abstract;
@@ -28,26 +28,26 @@ namespace _7.NumericalSequence.Controllers
 
                 if (convertedNumber == -1)
                 {
-                    printer.WriteLine(Constant.INT_WRONG_TYPE);
+                    printer.WriteLine(Constant.INT_WRONG_TYPE, (int)Color.Red);
                     printer.ShowInstruction();
                     Environment.Exit(-1);
                 }
 
                 if (!validator.CheckIntOnPositive(convertedNumber))
                 {
-                    printer.WriteLine(Constant.WRONG_BOUNDARIES);
+                    printer.WriteLine(Constant.WRONG_BOUNDARIES, (int)Color.Red);
                     printer.ShowInstruction();
                     Environment.Exit(-1);
                 }
 
                 ISequence sequence = _sequenceFactory.CreateSequence(convertedNumber);
-                ISequenceViewer viewer = _sequenceFactory.CreateSequenceViewer(sequence.GetSequence());
+                ISequenceViewer viewer = _sequenceFactory.CreateSequenceViewer(sequence.GetSequence(), printer);
 
                 viewer.ShowSequence(convertedNumber);
             }
             catch (ArgumentException ex)
             {
-                printer.WriteLine(string.Format(Constant.ERROR_OCCURED,ex.Message));
+                printer.WriteLine(string.Format(Constant.ERROR_OCCURED,ex.Message), (int)Color.Red);
                 throw;
             }
         }
