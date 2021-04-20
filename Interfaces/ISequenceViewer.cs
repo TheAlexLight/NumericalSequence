@@ -2,6 +2,6 @@
 {
     public interface ISequenceViewer
     {
-        void ShowSequence(int startNumber);
+        void ShowSequence();
      }
 }

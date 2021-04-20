@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="_7.NumericalSequence.Controllers.FullFactory">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <AssociationLine Name="SequenceFactory" Type="_7.NumericalSequence.Interfaces.Factory.ISequenceFactory" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="2.938" />
+        <Point X="2.375" Y="2.938" />
+        <Point X="2.375" Y="2.938" />
+        <Point X="3.5" Y="2.938" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TasksLibFactory" Type="_7.NumericalSequence.Interfaces.Factory.ITasksLibFactory" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="3.688" />
+        <Point X="2.875" Y="3.688" />
+        <Point X="2.875" Y="4.562" />
+        <Point X="3.5" Y="4.562" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ValidatorFactory" Type="_7.NumericalSequence.Interfaces.Factory.IValidatorFactory" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="2.187" />
+        <Point X="2.375" Y="2.187" />
+        <Point X="2.375" Y="1.552" />
+        <Point X="3.75" Y="1.552" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAhACAAAgAAA=</HashCode>
+      <FileName>Controllers\FullFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SequenceFactory" />
+      <Property Name="TasksLibFactory" />
+      <Property Name="ValidatorFactory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="_7.NumericalSequence.Controllers.NumericSequenceController">
+    <Position X="0.5" Y="4.75" Width="2.25" />
+    <InheritanceLine Type="_7.NumericalSequence.Logic.Abstract.Controller" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.438" Y="6.75" />
+        <Point X="1.438" Y="6.175" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\NumericSequenceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_7.NumericalSequence.Logic.Abstract.Controller">
+    <Position X="0.5" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAQAAAAAAAAAAAAAAAAAAABAAAAAgAAA=</HashCode>
+      <FileName>Logic\Abstract\Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_7.NumericalSequence.Logic.Builders.ConsoleTasksLibBuilder" BaseTypeListCollapsed="true">
+    <Position X="6" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Builders\ConsoleTasksLibBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="_7.NumericalSequence.Logic.Builders.NumericSequenceBuilder" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAgAAAA=</HashCode>
+      <FileName>Logic\Builders\NumericSequenceBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="_7.NumericalSequence.Logic.Builders.ValidatorBuilder" BaseTypeListCollapsed="true">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Builders\ValidatorBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="_7.NumericalSequence.Logic.NumericSequence" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\NumericSequence.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="_7.NumericalSequence.Program">
+    <Position X="10.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_7.NumericalSequence.Validation.Converter" BaseTypeListCollapsed="true">
+    <Position X="11" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAEAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\Converter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="_7.NumericalSequence.Validation.Validator" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Validation\Validator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="_7.NumericalSequence.View.ConsolePrinter" BaseTypeListCollapsed="true">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAEAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>View\ConsolePrinter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="_7.NumericalSequence.View.Constant">
+    <Position X="13.75" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAAAAiAAA=</HashCode>
+      <FileName>View\Constant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_7.NumericalSequence.View.NumericSequenceViewer" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAUAAAAAAAAACAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>View\NumericSequenceViewer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="_7.NumericalSequence.Interfaces.Factory.ISequenceFactory">
+    <Position X="3.5" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAgAAAA=</HashCode>
+      <FileName>Interfaces\Factory\ISequenceFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="_7.NumericalSequence.Interfaces.Factory.ITasksLibFactory">
+    <Position X="3.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Factory\ITasksLibFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="_7.NumericalSequence.Interfaces.Factory.IValidatorFactory">
+    <Position X="3.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Factory\IValidatorFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="_7.NumericalSequence.Interfaces.ISequence">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ISequence.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="_7.NumericalSequence.Interfaces.ISequenceViewer">
+    <Position X="4.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ISequenceViewer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="_7.NumericalSequence.Interfaces.IValidator">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Interfaces\IValidator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="_7.NumericalSequence.Enums.Color" Collapsed="true">
+    <Position X="13.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAADAAAAA=</HashCode>
+      <FileName>Enums\Color.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

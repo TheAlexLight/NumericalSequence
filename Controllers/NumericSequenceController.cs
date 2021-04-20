@@ -40,10 +40,10 @@ namespace _7.NumericalSequence.Controllers
                     Environment.Exit(-1);
                 }
 
-                ISequence sequence = _sequenceFactory.CreateSequence(convertedNumber);
-                ISequenceViewer viewer = _sequenceFactory.CreateSequenceViewer(sequence.GetSequence(), printer);
+                ISequence sequence = _sequenceFactory.CreateSequence();
+                ISequenceViewer viewer = _sequenceFactory.CreateSequenceViewer(sequence.GetSequence(convertedNumber), printer, convertedNumber);
 
-                viewer.ShowSequence(convertedNumber);
+                viewer.ShowSequence();
             }
             catch (ArgumentException ex)
             {

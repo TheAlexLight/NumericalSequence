@@ -5,18 +5,9 @@ namespace _7.NumericalSequence.Logic
 {
     internal class NumericSequence : ISequence
     {
-        public NumericSequence(int number)
+        public IEnumerable<int> GetSequence(int number)
         {
-            _number = number;
-        }
-
-        private readonly int _number;
-
-        public int Number => _number;
-
-        public IEnumerable<int> GetSequence()
-        {
-            for (int currentNumber = 0; currentNumber * currentNumber < _number; currentNumber++)
+            for (int currentNumber = 1; currentNumber * currentNumber < number; currentNumber++)
             {
                 yield return currentNumber;
             }

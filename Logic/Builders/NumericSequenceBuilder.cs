@@ -9,14 +9,14 @@ namespace _7.NumericalSequence.Logic.Builders
 {
     class NumericSequenceBuilder : ISequenceFactory
     {
-        public ISequence CreateSequence(int number)
+        public ISequence CreateSequence()
         {
-            return new NumericSequence(number);
+            return new NumericSequence();
         }
 
-        public ISequenceViewer CreateSequenceViewer(IEnumerable<int> receivedSequence, IOutsidePrinter printer)
+        public ISequenceViewer CreateSequenceViewer(IEnumerable<int> receivedSequence, IOutsidePrinter printer, int maxValue)
         {
-            return new NumericSequenceViewer(receivedSequence, printer);
+            return new NumericSequenceViewer(receivedSequence, printer, maxValue);
         }
     }
 }
