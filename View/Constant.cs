@@ -1,6 +1,6 @@
 ﻿namespace _7.NumericalSequence.View
 {
-    class Constant
+    public static class Constant
     {
         public const int MAX_NUMBER_VALUE = 100000000;
 

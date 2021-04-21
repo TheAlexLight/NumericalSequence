@@ -11,8 +11,6 @@ namespace _7.NumericalSequence.Logic
             {
                 yield return currentNumber;
             }
-
-            yield break;
         }
     }
 }

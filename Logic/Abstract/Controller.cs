@@ -1,18 +1,15 @@
-﻿using _7.NumericalSequence.Interfaces.Factory;
+﻿using _7.NumericalSequence.Controllers;
+using _7.NumericalSequence.Interfaces.Factory;
 
 namespace _7.NumericalSequence.Logic.Abstract
 {
     public abstract class Controller
     {
-        readonly protected ITasksLibFactory _taskLibFactory;
-        readonly protected ISequenceFactory _sequenceFactory;
-        readonly protected IValidatorFactory _validatorFactory;
+        readonly protected FullFactory _allFactories;
 
-        public Controller(ITasksLibFactory tasksLibFactory, ISequenceFactory sequenceFactory, IValidatorFactory validatorFactory)
+        public Controller(FullFactory allFactories)
         {
-            _taskLibFactory = tasksLibFactory;
-            _sequenceFactory = sequenceFactory;
-            _validatorFactory = validatorFactory;
+            _allFactories = allFactories;
         }
 
         public abstract void Initialize(string number);

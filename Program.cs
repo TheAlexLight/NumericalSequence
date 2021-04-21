@@ -20,8 +20,7 @@ namespace _7.NumericalSequence
                     throw new ArgumentException();
                 }
 
-                Controller SequenceController = new NumericSequenceController(allFactories.TasksLibFactory, allFactories.SequenceFactory,
-                        allFactories.ValidatorFactory);
+                Controller SequenceController = new NumericSequenceController(allFactories);
 
                 SequenceController.Initialize(args[0]);
             }

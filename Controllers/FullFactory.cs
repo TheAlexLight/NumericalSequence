@@ -2,7 +2,7 @@
 
 namespace _7.NumericalSequence.Controllers
 {
-    class FullFactory
+    public class FullFactory
     {
         public FullFactory(ITasksLibFactory tasksLibFactory, IValidatorFactory validatorFactory, ISequenceFactory sequenceFactory)
         {
